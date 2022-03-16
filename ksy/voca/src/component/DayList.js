@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react';
 import { Link } from "react-router-dom";
+import useFetch from '../hooks/useFetch';
 
 export default function DayList() {
-    const [ days, setDays ] = useState([]);
     // const [ count, setCount ] = useState(0);
     
     // function onClick() {
@@ -18,18 +18,24 @@ export default function DayList() {
     //         }
     //     ])
     // }
+
+
+    // const [ days, setDays ] = useState([]);
     
-    useEffect(() => {
-        // console.log("Count change");
-        fetch('http://localhost:3001/days') //Promise 반환
-            .then(res => {
-                return res.json()
-            })
-            .then(data => {
-                setDays(data);
-            });
-    }, []); //의존성 배열의 값이 변경되는 경우에만 이 함수가 실행됨
-    //상태값과 무관하게 렌더링 직후 한 번만 실행되는 작업은 빈 배열을 전달하면 됨
+    // useEffect(() => {
+    //     // console.log("Count change");
+    //     fetch('http://localhost:3001/days') //Promise 반환
+    //         .then(res => {
+    //             return res.json()
+    //         })
+    //         .then(data => {
+    //             setDays(data);
+    //         });
+    // }, []); //의존성 배열의 값이 변경되는 경우에만 이 함수가 실행됨
+    // //상태값과 무관하게 렌더링 직후 한 번만 실행되는 작업은 빈 배열을 전달하면 됨
+
+    
+    const days = useFetch('http://localhost:3001/days');
 
     return (
         <ul className="list_day">
