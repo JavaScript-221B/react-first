@@ -109,6 +109,13 @@
       "kor": "노트",
       "isDone": false,
       "id": 15
+    },
+    {
+      "day": "1",
+      "eng": "bread",
+      "kor": "빵",
+      "isDone": false,
+      "id": 16
     }
   ]
 }
