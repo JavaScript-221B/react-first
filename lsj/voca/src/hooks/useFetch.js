@@ -10,7 +10,7 @@ export default function useFetch(url) {
   }
 
   useEffect(() => {
-    fetchData();
+    fetchData(url);
   }, [url]);
 
   return data;
