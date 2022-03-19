@@ -2,6 +2,11 @@ import { useEffect, useState } from 'react';
 import { Link } from "react-router-dom";
 import useFetch from '../hooks/useFetch';
 
+export interface IDay {
+    id: number;
+    day: number;
+}
+
 export default function DayList() {
     // const [ count, setCount ] = useState(0);
     
@@ -35,7 +40,7 @@ export default function DayList() {
     // //상태값과 무관하게 렌더링 직후 한 번만 실행되는 작업은 빈 배열을 전달하면 됨
 
     
-    const days = useFetch('http://localhost:3001/days');
+    const days : IDay[] = useFetch('http://localhost:3001/days');
 
     if (days.length === 0) {
         return <span>Loading...</span>
